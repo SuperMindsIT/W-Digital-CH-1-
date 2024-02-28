@@ -21,13 +21,9 @@
     <div
     class="inputn h14 flex justify-center items-center text-center mt-4 px-2.5"
   >
-    <input
-      class="inputph border border-[#FFEFB3] rounded-xl pl-3 h-24 w-[463px] text-center font-semibold text-xl text-[#000000] bg-[#f3e7a482]"
-      type="text"
-      placeholder=" "
-      id="inputField"
-      name="inputField"
-    />
+    <div class="border flex border-[#FFEFB3] rounded-xl h-24 w-[463px] text-center items-center justify-center font-semibold text-xl text-[#000000] bg-[#f3e7a482]">
+      <p>46</p>
+    </div>
   </div>
   <div
     class="pt-3 pb-3 text-[#FFC801] flex text-center text-xs justify-center"
@@ -42,7 +38,7 @@
       id="redirectButton"
       type="submit"
       value="redirect"
-      onclick="return validateInput()"
+      onclick="return redirect()"
     >
     WEITERMACHEN
     </button>
@@ -76,30 +72,12 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document
-        .getElementById("redirectButton")
-        .addEventListener("click", validateInput);
-    });
 
-    function validateInput() {
-      let input = document.getElementById("inputField").value.trim();
-      let errorMessageElement = document.getElementById("errorMessage");
-      if (input === "") {
-        errorMessageElement.textContent =
-          "Please Enter your Phone Number to proceed.";
-      } else if (isNaN(input)) {
-        errorMessageElement.textContent =
-          "Enter your phone number in correct format";
-      } else {
-        errorMessageElement.textContent = "";
-        redirect();
-      }
-    }
-
-    function redirect() {
+      function redirect() {
       window.location.href = "secondpage.html";
     }
+
+    
   </script>
 </body>
 </html>
