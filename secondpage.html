@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>W Ch1 Page2</title>
+</head>
+<body background="img/image 58.png">
+    <div class="hero flex-column text-center items-center justify-center mt-6 text-white">
+          <div class="heading mt-36 pr-6 pl-6 font-medium uppercase text-4xl font-semibold">
+            <p>Glückwunsch</p>
+          </div>
+          <div class="photo flex items-center justify-center">
+            <img class="heroimage p-10 h-4/5" src="img/assetexporting1.png" alt="">
+          </div>
+        
+    </div>
+  <div
+    class="pt-3 pb-3 text-[#FFC801] flex text-center text-xs justify-center"
+    id="errorMessage"
+  ></div>
+
+  <div
+    class="downloadbtn px-2.5 flex justify-center items-center text-center border-[#8800B7]"
+  >
+    <button
+      class="btndm rounded-xl font-semibold text-[#2C444E] bg-[#FFC801] h-16 w-[463px] flex justify-center items-center text-center text-2xl "
+      id="redirectButton"
+      type="submit"
+      value="redirect"
+      onclick="return validateInput()"
+    >
+    ERLEDIGT
+    </button>
+  </div>
+  <div
+    class="footer px-2.5 text-[#000000] bg-[#FFC801] w-[100%] h-66 mt-[20rem] text-xs"
+  >
+    <p class="center text-center pt-10 pb-2">
+        Wenn Sie sich für unseren Service entscheiden, stimmen Sie zu, unseren Service zu abonnieren. Dies ist ein mobiler Spieledienst. Nach dem Abonnement erhalten Sie eine SMS mit einer URL, über die
+    </p>
+    <p class="center text-center pb-10">
+        Sie auf unser Spielportal zugreifen können. CHF 15 pro Woche, Sunrise = 1 SMS x CHF 15, Salt = 3 SMS x CHF 5
+    </p>
+  </div>
+
+
+
+
+
+    <style>
+        body{
+            font-family: "Montserrat", sans-serif;
+        }
+        @media (max-width:600px) {
+            .inputph{
+                height: 62.8px ;
+                width: 288px;
+            }
+            .heading{
+                font-size: large;
+            }
+        }
+    </style>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document
+        .getElementById("redirectButton")
+        .addEventListener("click", validateInput);
+    });
+
+    function validateInput() {
+      let input = document.getElementById("inputField").value.trim();
+      let errorMessageElement = document.getElementById("errorMessage");
+      if (input === "") {
+        errorMessageElement.textContent =
+          "Please Enter your Phone Number to proceed.";
+      } else if (isNaN(input)) {
+        errorMessageElement.textContent =
+          "Enter your phone number in correct format";
+      } else {
+        errorMessageElement.textContent = "";
+        redirect();
+      }
+    }
+
+    function redirect() {
+      window.location.href = "secondpage.html";
+    }
+  </script>
+</body>
+</html>
